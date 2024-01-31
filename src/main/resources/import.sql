@@ -1,0 +1,1 @@
+INSERT INTO clients (name, last_name, email, create_at) VALUES('Gabriel', 'Chaparro', 'gabriel@example.com', '2024-01-01');
