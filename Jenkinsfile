@@ -1,10 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Build') { 
+        stage('Compile') {
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                script {
+                    // Compile the Spring Boot application with Maven
+                    sh 'mvn compile'
+                }
             }
+        }
+        stage('Unit Test') {
+            steps {
+                script {
+                    // Run unit tests with Maven
+                    sh 'mvn test'
+                }
+            }
+        }
         }
     }
 }
